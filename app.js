@@ -279,7 +279,6 @@ for(let i=0;i<stringWithoutSpaces.length;i++){
     }
 }
 console.log(count)
-
 // Bonus 2:
 // Create a new variable phraseToCheck and have it contain some string value. Write a code that will check if the value we assigned to this variable is a Palindrome. Here are some examples of palindromes:
 
@@ -294,11 +293,11 @@ console.log(count)
 
 // Hint: If you use Google to help you to find solution to this iteration, you might run into some solutions that use advanced string or array methods (such as join(), reverse(), etc.). However, try to apply the knowledge you currently have since you can build pretty nice solution with just using for loop, if-else statements with some break and continue... Just sayin' 
 
-const phraseToCheck = "A man, a plan, a canal, Panama!";
-
+const phraseToCheck = "step on no pets";
 function isPalindrome(phraseToCheck) {
+    
+    const cleanString = phraseToCheck.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
 
-    const cleanString = phraseToCheck.toLowerCase();
 
     for (let i = 0; i < cleanString.length / 2; i++) {
       if (cleanString[i] !== cleanString[cleanString.length - 1 - i]) {
@@ -307,4 +306,5 @@ function isPalindrome(phraseToCheck) {
     }
     return true;
   }
+
   console.log("Is it a palindrome? " + isPalindrome(phraseToCheck));
